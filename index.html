@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">
+    <script defer src="./script/script.js"></script>
     <title>Odin | Sign-up form</title>
 </head>
 <body>
@@ -13,55 +14,63 @@
             <img src="./images/odin-lined.png" alt="Odin">
             <h1>ODIN</h1>
         </div>
+        <p id="credit">photo by halie west </p>
     </div>
     <div class="form-container">
         <div class="form-container__text">
-            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
+            <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started</p>
         </div>
         <div class="form-container__subtext">
-            <p>You <em>know</em> you want to.</p>
+            <p >You <em>know</em> you want to</p>
         </div>
-        <form action="">
+        <form action="" id="form">
             <div class="fields">
                 <h2>Let's do this!</h2>
                 <div class="row">
                     <div class="field">
                         <label for="firstname">first name</label>
-                        <input type="text" id="firstname" name="firstName" >
+                        <input type="text" id="firstname" name="firstName" minlength="3" maxlength="35" required>
                     </div>
                     <div class="field">
                         <label for="lastname">last name</label>
-                        <input type="text" id="lastname" name="lastName">
+                        <input type="text" id="lastname" name="lastName" minlength="3" maxlength="35" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="field">
                         <label for="useremail">email</label>
-                        <input type="email" id="useremail" name="userEmail">
+                        <input type="email" id="useremail" name="userEmail" required>
                     </div>
                     <div class="field">
                         <label for="userphone">phone number</label>
-                        <input type="tel" id="userphone" name="userPhone">
+                        <input type="tel" id="userphone" name="userPhone" pattern="^(\+961|00961)(3|7[01689]|81)\d{6}$" placeholder="Ex. +96112345678">
                     </div>
                 </div>
                 <div class="row">
                     <div class="field">
                         <label for="userpass">password</label>
-                        <input type="password" id="userpass" name="userPass">
+                        <input type="password" id="userpass" name="userPass" minlength="8" required>
                     </div>
                     <div class="field">
                         <label for="userpassconfim">confirm password</label>
-                        <input type="text" id="userpassconfim" name="userPassConfim">
+                        <input type="password" id="userpassconfim" name="userPassConfim" minlength="8" required>
                     </div>
+                    <span id="errorMessage"></span>
                 </div>
             </div>
             <div class="form-footer">
                 <div class="form-footer__button">
                     <button>Create Account</button>
                 </div>
-                <p>Already have an account?<a href="#">Log in</a></p>
+                <p>Already have an account?<a style="padding-left:10px;" href="#">Log in</a></p>
             </div>
         </form>
+    </div>
+    <div class="modal">
+        <div class="check__image">
+            <img src="./images/icons8-success-60.png" alt="check icon">
+        </div>
+        <h4>Your account is successfully created.</h4>
     </div>
 </body>
 </html>
